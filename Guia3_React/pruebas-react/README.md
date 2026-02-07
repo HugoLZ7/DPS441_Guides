@@ -1,16 +1,38 @@
-# React + Vite
+# 🧪 Pruebas-React  
+### Proyecto de Prueba con React y Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a **Pruebas-React**! Este es un proyecto de muestra creado para demostrar cómo configurar y ejecutar una aplicación básica de **React** utilizando **Vite**. Sigue los pasos a continuación para poner en marcha el proyecto en tu máquina local.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Requisitos Previos
 
-## React Compiler
+Antes de comenzar, asegúrate de tener instalado **Node.js** en tu sistema. Puedes descargarlo e instalarlo desde https://nodejs.org/.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📥 Clonar el Repositorio
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Abre tu terminal y navega hasta la ubicación donde deseas clonar el repositorio.  
+2. Ejecuta el siguiente comando para clonar el repositorio: git clone https://github.com/tu-usuario/pruebas-react.  
+3. Ingresa al directorio del proyecto usando el comando: cd pruebas-react.
+
+---
+
+## 📦 Instalar Dependencias
+
+En el directorio del proyecto, ejecuta el siguiente comando para instalar las dependencias necesarias: npm install.
+
+---
+
+## 🚀 Configuración de Desarrollo
+
+Ahora que las dependencias están instaladas, puedes iniciar el servidor de desarrollo ejecutando: npm run dev.  
+Abre tu navegador web y visita http://localhost:5173. Deberías ver la aplicación de prueba de React en funcionamiento.
+
+---
+
+## ⚙️ Personalización Adicional
+
+Si necesitas personalizar la configuración de Vite, edita el archivo **vite.config.js** en el directorio del proyecto.  
+¡Ya estás listo para comenzar a desarrollar tu aplicación con **React y Vite**!
