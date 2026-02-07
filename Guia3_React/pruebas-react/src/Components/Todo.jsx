@@ -1,0 +1,15 @@
+import React from "react";
+
+const Todo = ({todo, index, deleteTodo}) => {
+    return (
+        <>
+        <div className="todo-item">
+            <span className="todo-text">{todo}</span>
+            <button className="eliminar" onClick={() => deleteTodo(index)}>
+                X
+            </button>
+        </div>
+        </>
+    )
+}
+export default Todo;
