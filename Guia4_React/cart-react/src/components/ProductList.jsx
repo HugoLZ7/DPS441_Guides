@@ -2,7 +2,30 @@ import React from "react";
 import { productStyles } from "../styles/product.styles";
 import { data } from "../data/data";
 
-export const ProductList = () => {
+export const ProductList = ({
+    allProducts,
+    setAllProducts,
+    total,
+    setTotal,
+    countProducts,
+    setCountProducts,
+    }) => {
+
+        const onAddCart = product =>{
+            if(allProducts.find(item => item.id === product.id)){
+                const products = allProducts.map(item => 
+                    item.id === product.id 
+                    ? {...item, quantity: item.quantity + 1}
+                    : item
+                )
+                setTotal(total + product.price);
+                setCountProducts(countProducts + 1);
+                return setAllProducts(products);
+            }
+                setTotal(total + product.price);
+                setCountProducts(countProducts + 1);
+                setAllProducts([...allProducts, {...product, quantity: 1}]);
+            }
     return (
         <main className={productStyles.layout}
             data-purpose="book-listing-container"
@@ -34,6 +57,7 @@ export const ProductList = () => {
                                     </span>
                                     <button className={productStyles.addButton}
                                         data-purpose="add-to-cart-btn"
+                                        onClick={()=>onAddCart(product)}
                                     >Añadir al carrito
                                     </button>
                                 </div>
@@ -43,5 +67,5 @@ export const ProductList = () => {
                 </div>
             </section>
         </main>
-    )
-}
+    );
+};
