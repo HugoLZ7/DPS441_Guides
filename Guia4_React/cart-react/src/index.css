@@ -1,0 +1,30 @@
+
+@import "tailwindcss";
+
+/* =========================
+   Fuente global
+========================= */
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================
+   Utilidades custom
+========================= */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Modal animation (si lo usas) */
+#cart-modal {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
