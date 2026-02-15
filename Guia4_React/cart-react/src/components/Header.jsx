@@ -4,27 +4,27 @@ import { cartStyles } from "../styles/cart.styles";
 import { CircleX, ShoppingCart, ShoppingBag } from "lucide-react";
 
 export const Header = ({
-    allProducts,
-    setAllProducts,
-    total,
-    setTotal,
-    countProducts,
-    setCountProducts,
+  allProducts,
+  setAllProducts,
+  total,
+  setTotal,
+  countProducts,
+  setCountProducts,
 }) => {
-    const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
-    const onDeleteProduct = (product) => {
-        const results = allProducts.filter((item) => item.id !== product.id);
-        setTotal(total - product.price * product.quantity);
-        setCountProducts(countProducts - product.quantity);
-        setAllProducts(results);
-    }
+  const onDeleteProduct = (product) => {
+    const results = allProducts.filter((item) => item.id !== product.id);
+    setTotal(total - product.price * product.quantity);
+    setCountProducts(countProducts - product.quantity);
+    setAllProducts(results);
+  };
 
-    const onClearCart = () => {
-        setAllProducts([]);
-        setTotal(0);
-        setCountProducts(0);
-    }
+  const onClearCart = () => {
+    setAllProducts([]);
+    setTotal(0);
+    setCountProducts(0);
+  };
 
   return (
     <header className={headerStyles.header} data-purpose="main-header">
@@ -43,67 +43,73 @@ export const Header = ({
       </div>
 
       <div
-        className={'${cartStyles.dropdown} ${active ? "modal-hidden" : ""}'}
+        className={`${cartStyles.dropdown} ${active ? "" : "modal-hidden"}`}
         data-purpose="cart-dropdown"
         id="cart-modal"
       >
         <div id="cart-items-container">
-  {allProducts.length > 0 ? (
-    <div className={cartStyles.section} id="cart-filled-state">
-      <div className={cartStyles.section}>
-        <p className={cartStyles.sectionTitle}>Tu Carrito</p>
+          {allProducts.length > 0 ? (
+            <div className={cartStyles.section} id="cart-filled-state">
+              <div className={cartStyles.section}>
+                <p className={cartStyles.sectionTitle}>Tu Carrito</p>
 
-        <div className="space-y-4" id="cart-items-list">
-          {allProducts.map((product) => (
-            <div className={cartStyles.itemRow} key={product.id}>
-              <div className="flex-1">
-                <div className={cartStyles.itemContainer}>
-                  <span className={cartStyles.itemTitle}>
-                    {product.quantity}x {product.title}
-                  </span>
-                  <span className={cartStyles.itemPrice}>
-                    ${product.price * product.quantity}
-                  </span>
+                <div className="space-y-4" id="cart-items-list">
+                  {allProducts.map((product) => (
+                    <div className={cartStyles.itemRow} key={product.id}>
+                      {/* Imagen usando urlImage de data */}
+                      <img
+                        src={product.urlImage}
+                        alt={product.title}
+                        className="w-12 h-16 object-cover rounded-md"
+                      />
+
+                      <div className="flex-1 ml-3">
+                        <div className={cartStyles.itemContainer}>
+                          <span className={cartStyles.itemTitle}>
+                            {product.quantity}x {product.title}
+                          </span>
+                          <span className={cartStyles.itemPrice}>
+                            ${product.price * product.quantity}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        className={cartStyles.removeBtn}
+                        data-purpose="remove-item"
+                        onClick={() => onDeleteProduct(product)}
+                      >
+                        <CircleX className="w-5 h-5" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                <div className={cartStyles.totalRow}>
+                  <span className={cartStyles.totalLabel}>Total:</span>
+                  <span className={cartStyles.totalValue}>${total}</span>
+                </div>
+
+                <div className={cartStyles.actions}>
+                  <button
+                    className={cartStyles.clearBtn}
+                    id="clear-cart"
+                    onClick={onClearCart}
+                  >
+                    Vaciar Carrito
+                  </button>
+                  <button className={cartStyles.payBtn}>Pagar</button>
                 </div>
               </div>
-
-              <button
-                className={cartStyles.removeBtn}
-                data-purpose="remove-item"
-                onClick={() => onDeleteProduct(product)}
-              >
-                <CircleX className="w-5 h-5" />
-              </button>
             </div>
-          ))}
-        </div>
-
-        <div className={cartStyles.totalRow}>
-          <span className={cartStyles.totalLabel}>Total:</span>
-          <span className={cartStyles.totalValue}>${total}</span>
-        </div>
-
-        <div className={cartStyles.actions}>
-          <button
-            className={cartStyles.clearBtn}
-            id="clear-cart"
-            onClick={onClearCart}
-          >
-            Vaciar Carrito
-          </button>
-          <button className={cartStyles.payBtn}>Pagar</button>
+          ) : (
+            <div className={cartStyles.emptyState} id="cart-empty-state">
+              <ShoppingBag className={cartStyles.emptyIcon} />
+              <p className={cartStyles.emptyText}>El carrito está vacío</p>
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  ) : (
-    <div className={cartStyles.emptyState} id="cart-empty-state">
-      <ShoppingBag className={cartStyles.emptyIcon} />
-      <p className={cartStyles.emptyText}>El carrito está vacío</p>
-    </div>
-  )}
-</div>
-</div>
-</header>
+    </header>
   );
 };
-
