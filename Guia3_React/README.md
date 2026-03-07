@@ -1,6 +1,6 @@
-# 📚 Procedimiento Guia #4
+# 📚 Procedimiento Guia #3
 
-> Procedimiento desarrollado de guia #4 para la asignatura DPS441.
+> Procedimiento desarrollado de guia #3 para la asignatura DPS441.
 
 ---
 
@@ -11,12 +11,6 @@
 - **Asignatura:** DPS441
 - **Docente:** Emerson Cartagena
 
----
-
-## 🎯 Objetivos
-
-### Objetivo General
-- Desarrollar un sistema de tienda de libros.
 ---
 
 ## 🛠️ Tecnologías Utilizadas
