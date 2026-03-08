@@ -35,7 +35,7 @@ export default function App() {
           keyExtractor={(item) => item.id}
           contentContainerStyle={styles.list}
           showsVerticalScrollIndicator={false}
-          renderItem={({ item }) => <Item title={item.title} img={item.src} />}
+          renderItem={({ item }) => <Item title={item.title} img={item.img} />}
         />
       </SafeAreaView>
     </SafeAreaProvider>
