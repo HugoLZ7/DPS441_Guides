@@ -18,10 +18,8 @@ Aquí se encuentran guías, ejercicios y proyectos prácticos realizados.
 A lo largo de los proyectos se han utilizado las siguientes tecnologías:
 
 - ⚛️ React / Vite
+- ⚛️ React Native
 - 🟨 JavaScript
-- ☕ Java / Spring Boot
-- 🐘 PHP
-- 🗄️ MySQL
 - 🎨 HTML, CSS, Bootstrap, Tailwind
 - 🔧 Git & GitHub
 
